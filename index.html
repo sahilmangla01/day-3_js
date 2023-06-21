@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Assignment</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1  >Day-3</h1>
+    </header>
+    
+
+    <div class="container">
+        <h2 class="Question">Q.1	What are promises and why do we need them?</h2>
+        
+
+        <p class="Explain">Promises are a way to handle asynchronous operations in JavaScript. In simpler terms, they allow you to handle code that may take some time to execute without blocking the rest of your code.</p>
+        <p class="Explain">A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason</p>
+        <p class="Explain"> A promise has three states: pending , success , failure and initial state of a promise is always pending.</p>
+        <pre class="code">function hello(){
+    return new Promise((res , rej)=>{
+       if(false){
+           res("resolved successfully")
+       }else{
+           rej(error("Error"))
+       }
+    })
+}
+
+hello()
+.then((result)=>console.log(result))
+.catch((err) => console.log(err))</pre>
+
+        
+    </div>
+
+    <div class="container">
+        <h2 class="Question">Q.2	What is promise chaining?</h2>
+        
+        <p class="Explain">Promise chaining is a way to use promises in JavaScript to execute a series of asynchronous operations in a specific order. It involves calling multiple promises in a sequence, where each promise depends on the result of the previous one.
+    </p>
+        
+    <pre class="code">function one(timeout){
+    return new Promise((res , rej)=>{
+     setTimeout(()=>{
+        res("First is completed")
+    }, timeout)     
+    })
+   
+}
+function second(result,timeout){
+    console.log(result);
+    return new Promise((res , rej)=>{
+        setTimeout(()=>{
+        res("Second is completed")
+    }, timeout) 
+    })
+    
+    
+}
+function third(result,timeout){
+    console.log(result)
+    return new Promise((res , rej)=>{
+    setTimeout(()=>{
+        res("Third is completed")
+    }, timeout)
+        
+    })
+}
+
+one(1000)
+.then((result)=> second(result, 2000))
+.then((result)=> third(result, 3000))
+.then((result)=> console.log(result))
+.catch((err)=> console.log(err))</pre>
+    
+
+</div>
+
+<div class="container">
+    <h2 class="Question">Q.3	What is the DOM?</h2>
+    <p class="Explain">The DOM stands for Document Object Model, and it's a way for web developers to interact with and manipulate HTML and XML documents using JavaScript.
+        </p>
+        
+        
+    </div>
+
+    <div class="container">
+        <h2 class="Question">Q.4	What are closures? Give an example of closure?</h2>
+            
+            <p class="Explain">A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). </p>
+            <pre class="code"> function init() {
+  var name = "PrepBytes";
+  function displayName() {
+    
+    console.log(name); 
+  displayName();
+}
+init();
+            </pre>
+    </div>
+
+    <div class="container">
+        <h2 class="Question">Q.5	 How many operators do we have in JS ?
+
+        </h2>
+            <pre class="Explain"><span> Arithmetic operators</span>
+        let a = 5;
+        let b = 10;
+        let c = a + b; // addition
+        let d = b - a; // subtraction
+        let e = a * b; // multiplication
+        let f = b / a; // division
+        let g = b % a; // modulus (remainder)</pre>
+     <pre class="Explain"><span> Assignment operators</span> 
+        let x = 5;
+        x += 10; // equivalent to x = x + 10
+        x -= 5; // equivalent to x = x - 5
+        x *= 2; // equivalent to x = x * 2
+        x /= 3; // equivalent to x = x / 3
+        x %= 2; // equivalent to x = x % 2</pre>
+        
+        <pre class="Explain"><span>Comparison Operator</span>
+        let num1 = 10;
+        let num2 = 20;
+        let num3 = 10;
+        let isEqual = num1 == num2; // false
+        let isNotEqual = num1 != num2; // true
+        let isStrictEqual = num1 === num3; // true (checks both value and data type)
+        let isGreaterThan = num2 > num1; // true
+        let isLessThanOrEqual = num1 <= num3; // true</pre>
+
+        <pre class="Explain"><span> Logical operators</span>
+        let isTrue = true;
+        let isFalse = false;
+        let isAnd = isTrue && isFalse; // false
+        let isOr = isTrue || isFalse; // true
+        let isNot = !isTrue; // false</pre>
+
+        <pre class="Explain"><span> Bitwise operators</span>
+        let num4 = 5; // binary: 0101
+        let num5 = 10; // binary: 1010
+        let bitAnd = num4 & num5; // 0000 (AND)
+        let bitOr = num4 | num5; // 1111 (OR)
+        let bitXor = num4 ^ num5; // 1111 (XOR)
+        let bitNot = ~num4; // 1010 (NOT)
+        let bitLeftShift = num4 << 1; // 1010 (left shift)
+        let bitRightShift = num5 >> 1; // 0101 (right shift)</pre>
+            </div>
+        <div class="container">
+            <h2 class="Question">Q.6	What are objects in javascript?</h2>
+                
+                <p class="Explain"> In javascript objects are the non primitive data type. We use objects to store data in the form of key value pair.</p>
+                <pre class="code">let employee = new Object();
+                    employee.id = 101;
+                    employee.name = "xyz"
+                </pre>
+        </div>
+
+       
+
+   
+   
+    
+   
+
+
+</body>
+</html>
